@@ -1,6 +1,7 @@
 from datetime import timedelta
 from typing import Union, Annotated
 
+import sentry_sdk
 from fastapi import FastAPI, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from passlib.context import CryptContext
@@ -14,6 +15,16 @@ from database.utils import get_session
 from services.user_service import UserService, UserCRUD
 
 
+sentry_sdk.init(
+    dsn=config.sentry_url,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
 app = FastAPI()
 
 
@@ -26,7 +37,8 @@ async def login_with_token(
         UserCRUD,
         session
     )
-    is_auth = await user_service.authenticate_user(user_in)
+
+    await user_service.authenticate_user(user_in)
     access_token = user_service.create_access_token(
         data={"sub": user_in.username}
     )
@@ -42,5 +54,5 @@ async def register(
         UserCRUD,
         session
     )
-    user = await user_service.register(user_in)
+    await user_service.register(user_in)
     return {"success": True}

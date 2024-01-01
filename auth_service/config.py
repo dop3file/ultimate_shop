@@ -13,6 +13,7 @@ class Config(BaseSettings):
     expiration_time: int = Field()
     database_url: str = Field()
     token_expire: timedelta
+    sentry_url: str = Field()
 
 
 load_dotenv()
@@ -21,5 +22,6 @@ config = Config(
     hash_algorithm="HS256",
     expiration_time=1800,
     database_url=os.getenv("DATABASE_URL"),
-    token_expire=timedelta(minutes=30)
+    token_expire=timedelta(minutes=30),
+    sentry_url=os.getenv("SENTRY_URL")
 )

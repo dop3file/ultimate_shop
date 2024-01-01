@@ -3,10 +3,10 @@ name = "tools"
 version = "0.1.0"
 description = ""
 authors = ["dopefile <merlinincorp@gmail.com>"]
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+passlib = "^1.7.4"
 
 
 [build-system]

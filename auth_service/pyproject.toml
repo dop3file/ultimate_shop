@@ -23,6 +23,7 @@ greenlet = "^3.0.3"
 tools = {path="../tools/"}
 bcrypt = "^4.1.2"
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+sentry-sdk = {extras = ["fastapi"], version = "^1.39.1"}
 
 [build-system]
 requires = ["poetry-core"]
