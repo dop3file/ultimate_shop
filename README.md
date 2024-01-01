@@ -1,9 +1,9 @@
 # ultimate_shop
-Ultimate shop - API интернет магазина на FastAPI + postgres and etc
+Ultimate shop - API торговой площадки на FastAPI
 
 # Техническое задание
 ```
-  Создать интернет магазин(копия https://market.yandex.by/)
+  Создать торговую площадка(референс https://ozon.ru/))
   Функциональные фичи:
   - Товары
   - Поиск товаров(как по названию так и по критериям)
