@@ -39,6 +39,7 @@ Ultimate shop - API интернет магазина на FastAPI + postgres an
   - Swagger - автодокументация для API
   - Pydantic - валидация
   - Prometheus & Grafana - мониторинг
+  - Logstash & Sentry - логирование
   - Yandex Cloud - для хранения статики(картинки и так далее)
   - ElasticSearch - для полнотекстового поиска
   - black & isort & pylint & raff - линтеры
