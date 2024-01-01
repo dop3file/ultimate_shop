@@ -1,9 +1,8 @@
 [tool.poetry]
-name = "ultimate-shop"
+name = "ultimate_shop"
 version = "0.1.0"
 description = ""
 authors = ["dopefile <merlinincorp@gmail.com>"]
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -19,7 +18,11 @@ psycopg-binary = "^3.1.16"
 psycopg2-binary = "^2.9.9"
 python-multipart = "^0.0.6"
 alembic = "^1.13.1"
-
+asyncpg = "^0.29.0"
+greenlet = "^3.0.3"
+tools = {path="../tools/"}
+bcrypt = "^4.1.2"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 
 [build-system]
 requires = ["poetry-core"]
